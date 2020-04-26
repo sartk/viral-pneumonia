@@ -31,7 +31,7 @@ def home():
     return render_template('index.html')
 
 def batch_run(code, fname):
-    with open('results/sample.csv'.format(code), 'w') as csvfile:
+    with open('results/{}.csv'.format(code), 'w') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
         for im in os.listdir('uploads/{}/{}/'.format(code, fname)):
